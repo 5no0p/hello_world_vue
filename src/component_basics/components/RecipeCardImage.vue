@@ -1,9 +1,10 @@
 <script setup>
 defineProps(['recipe'])
+defineEmits(['to-quickview'])
 </script>
 
 <template>
-    <img :src="'/photos/' + recipe.image"/>
+    <img @click="to-quickview" :src="'/photos/' + recipe.image"/>
 </template>
 
 <style scoped>

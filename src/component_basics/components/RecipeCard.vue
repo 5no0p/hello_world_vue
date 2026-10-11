@@ -9,8 +9,15 @@ const isImage = ref(true)
 
 <template>
 <section class="recipe-card">
-    <RecipeCardImage v-if="isImage" @click="isImage=false" :recipe/>
-    <RecipeCardQuickview v-else v-on:to-image="isImage=true" :isImage :recipe/>
+    <!-- <RecipeCardImage v-if="isImage" @click="isImage=false" :recipe/>
+    <RecipeCardQuickview v-else v-on:to-image="isImage=true" :isImage :recipe/> -->
+    <component 
+      :is="isImage ? RecipeCardImage : RecipeCardQuickview"
+      :recipe
+      @to-image="isImage='true'"
+      @to-quickview="isImage='false'"
+
+    />
   </section>
 </template>
 
