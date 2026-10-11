@@ -14,8 +14,8 @@ const isImage = ref(true)
     <component 
       :is="isImage ? RecipeCardImage : RecipeCardQuickview"
       :recipe
-      @to-image="isImage='true'"
-      @to-quickview="isImage='false'"
+      @to-image="isImage=true"
+      @to-quickview="isImage=false"
 
     />
   </section>
