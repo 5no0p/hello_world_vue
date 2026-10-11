@@ -1,4 +1,5 @@
 <script setup>
+import './style.css'
 import { ref } from 'vue';
 import CardHeader from './components/CardHeader.vue';
 import CardStats from './components/CardStats.vue';
@@ -36,7 +37,13 @@ const respawn = () => {
     <CardStats :race="race" :bio="bio" />
     <button @click="respawn">Respawn?</button>
   </section>
-  <EditForm />
+  <EditForm 
+    v-model:name="name" 
+    v-model:level="level"
+    v-model:bio="bio"
+    v-model:job="job"
+    v-model:race="race"
+  />
 </template>
 
 <style scoped>

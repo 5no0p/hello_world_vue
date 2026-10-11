@@ -1,17 +1,25 @@
+<script setup>
+const name = defineModel('name')
+const level = defineModel('level')
+const bio = defineModel('bio')
+const job = defineModel('job')
+const race = defineModel('race')
+</script>
+
 <template>
   <h3>Edit your character</h3>
   <form>
     <section>
       <label for="name">Name</label>
-      <input type="text" placeholder="Name" id="name" />
+      <input v-model="name" type="text" placeholder="Name" id="name" />
     </section>
     <section>
       <label for="level">Level</label>
-      <input type="number" min="0" placeholder="Level" id="level" />
+      <input v-model="level" type="number" min="0" placeholder="Level" id="level" />
     </section>
     <section>
       <label>Job:</label>
-      <select>
+      <select v-model="job">
         <option value="fighter">Fighter</option>
         <option value="ranger">Ranger</option>
         <option value="sorcerer">Sorcerer</option>
@@ -19,16 +27,16 @@
     </section>
     <section>
       <label>Race:</label>
-      <input type="radio" name="race" id="human" value="human" />
+      <input type="radio" name="race" id="human" value="human" v-model="race"/>
       <label for="human">Human</label>
-      <input type="radio" name="race" id="elf" value="elf" />
+      <input type="radio" name="race" id="elf" value="elf" v-model="race"/>
       <label for="elf">Elf</label>
-      <input type="radio" name="race" id="orc" value="orc" />
+      <input type="radio" name="race" id="orc" value="orc" v-model="race"/>
       <label for="orc">Orc</label>
     </section>
     <section>
       <label for="bio">Bio</label>
-      <textarea id="bio" rows="3"></textarea>
+      <textarea v-model="bio" id="bio" rows="3"></textarea>
     </section>
   </form>
 </template>
